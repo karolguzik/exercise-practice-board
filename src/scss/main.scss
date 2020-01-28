@@ -1,0 +1,197 @@
+$font-stack: 'Montserrat', sans-serif;
+$font-size-default: 2rem;
+$bgc-primary: #eee;
+$bgc-secondary: #282e34;
+$bgc-tertiary: #ff5252;
+$color-white: #eee;
+$color-dark: #333;
+$color-black: #000;
+$color-gray: #aaa;
+$box-shadow-thin: 0 3px 8px -3px $color-dark;
+$box-shadow-bold: 3px 3px 10px 2px $color-black;
+$border-radius-small: 5px;
+$border-radius-big: 50px;
+$transition: 0.1s ease-in;
+
+@mixin flexStack {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background: $bgc-primary;
+  color: $color-dark;
+  font-family: $font-stack;
+  font-size: $font-size-default;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  height: 70vh;
+  padding: 5rem;
+  background: $bgc-secondary;
+  color: $color-white;
+  box-shadow: $box-shadow-bold;
+  border-radius: $border-radius-small;
+  z-index: 2;
+  backdrop-filter: brightness(60%);
+
+  &__heading {
+    font-weight: 300;
+  }
+
+  &__exercise-description {
+    margin: 3rem 0 10rem;
+    color: $color-gray;
+  }
+
+  &__input {
+    display: block;
+    width: 70%;
+    margin: 0 auto;
+    padding: 1rem;
+    background: none;
+    color: $color-white;
+    border: none;
+    border-bottom: 1px solid $color-gray;
+    font-size: 2.5rem;
+    font-weight: 300;
+  }
+
+  &__result {
+    width: 80%;
+    margin: 10rem auto 0;
+    padding: 2rem;
+    background: $bgc-primary;
+    color: $color-dark;
+    border-radius: $border-radius-small;
+    text-align: center;
+    font-size: 3rem;
+  }
+
+  &__close {
+    position: absolute;
+    top: 2%;
+    right: 2%;
+    padding: 0.5rem 1rem;
+    background: $bgc-tertiary;
+    color: $color-dark;
+    border-radius: $border-radius-big;
+    border: 2px solid $bgc-tertiary;
+    font-size: 1.5rem;
+    transition: $transition;
+    cursor: pointer;
+
+    &:hover {
+      background: $bgc-secondary;
+      color: $color-white;
+    }
+  }
+}
+
+.heading {
+  font-weight: 700;
+  letter-spacing: 0.2rem;
+
+  &--primary {
+    text-align: center;
+  }
+
+  &--secondary {
+    position: relative;
+    padding: 2rem;
+    background: $bgc-secondary;
+    color: $color-white;
+    border-radius: $border-radius-small;
+    font-weight: 300;
+  }
+
+  &--tertiary {
+    padding: 5rem;
+    font-weight: 400;
+  }
+}
+
+.header {
+  padding: 5rem 0;
+  background: $bgc-secondary;
+  color: $color-white;
+}
+
+.fundamentals,
+.browser,
+.frameworks {
+  width: 80%;
+  margin: 10rem auto;
+
+  &__content {
+    width: 99%;
+    margin: 0 auto;
+    box-shadow: $box-shadow-thin;
+    border-radius: $border-radius-small;
+  }
+}
+
+.exercises {
+  @include flexStack;
+  padding: 1rem;
+}
+
+.exercise,
+.project {
+  width: 20%;
+  margin: 0.5rem 1rem;
+  padding: 1rem;
+  background: rgba($bgc-secondary, 0.2);
+  text-align: center;
+  border-radius: $border-radius-small;
+  cursor: pointer;
+
+  &:hover {
+    background: rgba($bgc-secondary, 0.3);
+  }
+}
+
+.projects {
+  @include flexStack;
+  padding: 3rem 0 10rem;
+}
+
+// Elements for open/close sections card
+.card-entity {
+  position: absolute;
+  top: 50%;
+  right: 2%;
+  transform: translateY(-50%);
+  transition: $transition;
+  cursor: pointer;
+
+  &:hover {
+    color: $bgc-tertiary;
+  }
+}
+
+.card-open {
+  color: green;
+}
+
+.card-close {
+  color: yellow;
+}
