@@ -22,6 +22,7 @@ const openModal = e => {
 
 const closeModal = () => {
   ui.closeModal();
+  document.querySelector(uiSelectors.exerciseSolution).classList.remove(uiSelectors.exerciseSolutionActive)
 }
 
 const showOrHideSolution = () => {

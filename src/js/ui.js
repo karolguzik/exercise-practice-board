@@ -32,11 +32,15 @@ export const UI = () => {
   const showModal = () => {
     const modalEl = document.querySelector(modal);
     modalEl.classList.add(modalActive);
+
+    document.body.style.position = 'fixed';
   }
   
   const closeModal = () => {
     const modalEl = document.querySelector(modal);
     modalEl.classList.remove(modalActive);
+
+    document.body.style.position = '';
   }
 
   const showOrHideSolution = () => {
