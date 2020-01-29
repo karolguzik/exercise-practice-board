@@ -12,7 +12,7 @@ $box-shadow-thin: 0 3px 8px -3px $color-dark;
 $box-shadow-bold: 3px 3px 10px 2px $color-black;
 $border-radius-small: 5px;
 $border-radius-big: 50px;
-$transition: 0.1s ease-in;
+$transition: .1s ease-in;
 
 @mixin flexStack {
   display: flex;
@@ -41,6 +41,34 @@ body {
 
 ul {
   list-style: none;
+}
+
+.btn {
+  display: block;
+  padding: 0.5rem 1rem;
+  background: $bgc-tertiary;
+  color: $color-dark;
+  border-radius: $border-radius-big;
+  border: 2px solid $bgc-tertiary;
+  font-size: 1.5rem;
+  transition: $transition;
+  cursor: pointer;
+
+  &:hover {
+    background: $bgc-secondary;
+    color: $color-white;
+  }
+
+
+  &--modal-close {
+    position: absolute;
+    top: 2%;
+    right: 2%;
+  }
+
+  &--solution {
+    margin: 5rem auto;
+  }
 }
 
 .exercise-name {
@@ -80,6 +108,32 @@ ul {
   padding: 1rem;
 }
 
+.exercise-solution {
+  display: none;
+  width: 60%;
+  margin: 0 auto;
+  padding: 2rem;
+  background: $bgc-primary;
+  color: $color-dark;
+  border-radius: $border-radius-small;
+  // text-align: center;
+  font-size: 1.8rem;
+
+  &--isActive {
+    display: block;
+  }
+}
+
+.exercise-code {
+  display: block;
+  margin: 0 auto;
+  width: 80%;
+}
+
+pre {
+  white-space: pre-line;
+}
+
 .arrow-right {
   align-self: center;
   color: green;
@@ -99,30 +153,10 @@ ul {
   box-shadow: $box-shadow-bold;
   border-radius: $border-radius-small;
   z-index: 2;
-  backdrop-filter: brightness(60%);
 
-  &-isActive {
+  &--isActive {
     display: block;
     position: fixed;
-  }
-
-  &-close {
-    position: absolute;
-    top: 2%;
-    right: 2%;
-    padding: 0.5rem 1rem;
-    background: $bgc-tertiary;
-    color: $color-dark;
-    border-radius: $border-radius-big;
-    border: 2px solid $bgc-tertiary;
-    font-size: 1.5rem;
-    transition: $transition;
-    cursor: pointer;
-
-    &:hover {
-      background: $bgc-secondary;
-      color: $color-white;
-    }
   }
 }
 

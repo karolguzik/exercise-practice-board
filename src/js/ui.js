@@ -1,27 +1,21 @@
 export const UI = () => {
   const DOMstring = {
     modal: '.modal',
-    modalActive: 'modal-isActive',
+    modalActive: 'modal--isActive',
     exerciseName: '.exercise-name',
     exerciseDesc: '.exercise-description',
     exerciseDescItem: 'exercise-description__item',
     exerciseInput: '.input',
     exerciseOutput: '.output',
     exerciseItem: '.exercise',
-    btnCloseModal: '.modal-close'
+    exerciseSolution: '.exercise-solution',
+    exerciseSolutionCode: '.exercise-code',
+    exerciseSolutionActive: 'exercise-solution--isActive',
+    btnToggleSolution: '.btn--solution',
+    btnCloseModal: '.btn--modal-close'
   }
 
-  const { modal, modalActive, exerciseName, exerciseDesc, exerciseDescItem, exerciseInput, exerciseOutput } = DOMstring;
-
-  const openModal = () => {
-    const modalEl = document.querySelector(modal);
-    modalEl.classList.add(modalActive);
-  }
-  
-  const closeModal = () => {
-    const modalEl = document.querySelector(modal);
-    modalEl.classList.remove(modalActive);
-  }
+  const { modal, modalActive, exerciseName, exerciseDesc, exerciseDescItem, exerciseInput, exerciseOutput, exerciseSolution, exerciseSolutionCode, exerciseSolutionActive } = DOMstring;
 
   const renderModal = ({ name, description, input, output, solution }) => {
     const splitDescription = description.split('.');
@@ -32,12 +26,30 @@ export const UI = () => {
     document.querySelector(exerciseDesc).innerHTML = descriptionList;
     document.querySelector(exerciseInput).textContent = input;
     document.querySelector(exerciseOutput).textContent = output;
+    document.querySelector(exerciseSolutionCode).textContent = solution;
   }
 
+  const showModal = () => {
+    const modalEl = document.querySelector(modal);
+    modalEl.classList.add(modalActive);
+  }
+  
+  const closeModal = () => {
+    const modalEl = document.querySelector(modal);
+    modalEl.classList.remove(modalActive);
+  }
+
+  const showOrHideSolution = () => {
+    const solution = document.querySelector(exerciseSolution);
+    solution.classList.toggle(exerciseSolutionActive);
+  }
+
+
   return {
-    openModal,
+    showModal,
     closeModal,
     renderModal,
+    showOrHideSolution,
     getSelectors: DOMstring
   }
 }

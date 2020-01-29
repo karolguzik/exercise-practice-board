@@ -4,7 +4,12 @@ export const exercisesData = [
     description: 'Implement function which reverse input of type string. Function should verify if type of argument is string. If it\'s not a type of string throw error',
     input: 'Hello world!',
     output: 'dlrow olleH!',
-    solution: 'My own code',
+    solution: 
+    `
+      <h1>Hello world</h1>
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolores dolor beatae nostrum ipsum minus in quos iste sed voluptates est?</p>
+      <footer>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit, maxime.</footer>
+    `,
   },
   {
     name: 'Validation',

@@ -17,6 +17,26 @@ body {
 ul {
   list-style: none; }
 
+.btn {
+  display: block;
+  padding: 0.5rem 1rem;
+  background: #ff5252;
+  color: #333;
+  border-radius: 50px;
+  border: 2px solid #ff5252;
+  font-size: 1.5rem;
+  transition: 0.1s ease-in;
+  cursor: pointer; }
+  .btn:hover {
+    background: #282e34;
+    color: #eee; }
+  .btn--modal-close {
+    position: absolute;
+    top: 2%;
+    right: 2%; }
+  .btn--solution {
+    margin: 5rem auto; }
+
 .exercise-name {
   font-weight: 300; }
 
@@ -48,6 +68,26 @@ ul {
   width: 40%;
   padding: 1rem; }
 
+.exercise-solution {
+  display: none;
+  width: 60%;
+  margin: 0 auto;
+  padding: 2rem;
+  background: #eee;
+  color: #333;
+  border-radius: 5px;
+  font-size: 1.8rem; }
+  .exercise-solution--isActive {
+    display: block; }
+
+.exercise-code {
+  display: block;
+  margin: 0 auto;
+  width: 80%; }
+
+pre {
+  white-space: pre-line; }
+
 .arrow-right {
   align-self: center;
   color: green; }
@@ -64,26 +104,10 @@ ul {
   color: #eee;
   box-shadow: 3px 3px 10px 2px #000;
   border-radius: 5px;
-  z-index: 2;
-  backdrop-filter: brightness(60%); }
-  .modal-isActive {
+  z-index: 2; }
+  .modal--isActive {
     display: block;
     position: fixed; }
-  .modal-close {
-    position: absolute;
-    top: 2%;
-    right: 2%;
-    padding: 0.5rem 1rem;
-    background: #ff5252;
-    color: #333;
-    border-radius: 50px;
-    border: 2px solid #ff5252;
-    font-size: 1.5rem;
-    transition: 0.1s ease-in;
-    cursor: pointer; }
-    .modal-close:hover {
-      background: #282e34;
-      color: #eee; }
 
 .heading {
   font-weight: 700;
