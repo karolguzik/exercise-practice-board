@@ -11,13 +11,14 @@ export const UI = () => {
     exerciseSolution: '.exercise-solution',
     exerciseSolutionCode: '.exercise-code',
     exerciseSolutionActive: 'exercise-solution--isActive',
-    btnToggleSolution: '.btn--solution',
+    btnCheckSolution: '.btn--solution',
     btnCloseModal: '.btn--modal-close'
   }
 
-  const { modal, modalActive, exerciseName, exerciseDesc, exerciseDescItem, exerciseInput, exerciseOutput, exerciseSolution, exerciseSolutionCode, exerciseSolutionActive } = DOMstring;
+  const { modal, modalActive, exerciseName, exerciseDesc, exerciseDescItem, exerciseInput, exerciseOutput, exerciseSolution, exerciseSolutionCode, exerciseSolutionActive, btnCheckSolution } = DOMstring;
 
-  const renderModal = ({ name, description, input, output, solution }) => {
+
+  const renderModal = ({ name, description, input, output, solutionLink }) => {
     const splitDescription = description.split('.');
     let descriptionList = '';
     splitDescription.forEach((el,index) => descriptionList += `<li class=${exerciseDescItem}>${index+1}. ${el}</li>`);
@@ -26,7 +27,8 @@ export const UI = () => {
     document.querySelector(exerciseDesc).innerHTML = descriptionList;
     document.querySelector(exerciseInput).textContent = input;
     document.querySelector(exerciseOutput).textContent = output;
-    document.querySelector(exerciseSolutionCode).textContent = solution;
+    // document.querySelector(btnCheckSolution).setAttribute('href',solutionLink)
+    // document.querySelector(exerciseSolutionCode).textContent = solutionLink;
   }
 
   const showModal = () => {

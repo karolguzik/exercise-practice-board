@@ -5,8 +5,9 @@ const ui = UI();
 const uiSelectors = ui.getSelectors;
 
 const btnCloseModal = document.querySelector(uiSelectors.btnCloseModal);
-const btnToggleSolution = document.querySelector(uiSelectors.btnToggleSolution);
+const btnCheckSolution = document.querySelector(uiSelectors.btnCheckSolution);
 const exercisesList = document.querySelectorAll(uiSelectors.exerciseItem);
+
 
 const openModal = e => {
   let currentExercise = e.target.textContent;
@@ -31,4 +32,4 @@ const showOrHideSolution = () => {
 
 exercisesList.forEach(el => el.addEventListener('click', openModal))
 btnCloseModal.addEventListener('click', closeModal);
-btnToggleSolution.addEventListener('click', showOrHideSolution);
+btnCheckSolution.addEventListener('click', showOrHideSolution);
